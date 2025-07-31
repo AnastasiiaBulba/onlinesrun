@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Contact Form</title>
+    <link rel="stylesheet" href="./css/bug-main.css" />
+    <link rel="stylesheet" href="./css/bug-header.css" />
+    <link rel="stylesheet" href="./css/bug-contacts.css" />
+  </head>
+  <body>
+    <div id="header-container"></div>
+
+    <main style="padding-top: 100px">
+      <section class="contact-content">
+        <div class="container">
+          <div class="contact-form-container">
+            <h2>Test Contact Form</h2>
+            <form class="contact-form" id="contact-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
+                <div id="name-error" class="error-message"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+                <div id="email-error" class="error-message"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" required>
+                  <option value="">Select a subject</option>
+                  <option value="game-support">Game Support</option>
+                  <option value="bug-report">Bug Report</option>
+                  <option value="feature-request">Feature Request</option>
+                  <option value="general">General Inquiry</option>
+                </select>
+                <div id="subject-error" class="error-message"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+                <div id="message-error" class="error-message"></div>
+              </div>
+
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/bug-utils.js"></script>
+    <script src="./js/bug-header.js"></script>
+    <script src="./js/bug-contact-form.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof initHeader === "function") {
+          initHeader();
+          console.log("✅ Header initialized");
+        }
+      });
+    </script>
+  </body>
+</html>

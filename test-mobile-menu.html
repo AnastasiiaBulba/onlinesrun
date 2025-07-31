@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Mobile Menu</title>
+    <link rel="stylesheet" href="./css/bug-main.css" />
+    <link rel="stylesheet" href="./css/bug-header.css" />
+  </head>
+  <body>
+    <div id="header-container"></div>
+
+    <main style="padding-top: 100px; min-height: 200vh">
+      <h1>Test Mobile Menu</h1>
+      <p>This is a test page to verify the mobile menu functionality.</p>
+      <p>
+        Resize your browser window to mobile size to see the mobile menu button.
+      </p>
+      <p>Click the hamburger menu button to open the mobile menu.</p>
+    </main>
+
+    <script src="./js/bug-utils.js"></script>
+    <script src="./js/bug-header.js"></script>
+    <script>
+      // Initialize header when DOM is loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        initHeader();
+      });
+    </script>
+  </body>
+</html>

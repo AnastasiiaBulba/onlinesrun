@@ -1,0 +1,38 @@
+{
+  "gameUpdates": [
+    {
+      "id": 1,
+      "title": "Epic Bug Invasion: New Species Arrive!",
+      "excerpt": "Prepare for the ultimate challenge as we unleash terrifying new bug species into the arena!",
+      "fullText": "The bug kingdom is expanding! We've unleashed a terrifying new collection of insect invaders that will test your reflexes like never before. Meet the lightning-fast Dragonflies that dart across the screen, the heavily armored Rhinoceros Beetles that require multiple hits, and the cunning Trapdoor Spiders that emerge from hidden burrows. Each new species brings unique challenges - some explode in spectacular fashion when hit, while others split into smaller bugs that must be eliminated quickly. The update also introduces stunning particle effects and bone-rattling sound design that makes every successful hit feel incredibly satisfying.",
+      "date": "2025-05-15",
+      "image": "./images/card-Whack1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Revolutionary Performance Boost",
+      "excerpt": "Experience lightning-fast gameplay with our groundbreaking performance enhancements!",
+      "fullText": "We've completely revolutionized the game's performance with cutting-edge optimizations that will blow your mind! Loading times have been slashed by an incredible 60%, and frame rates now soar to buttery-smooth 120 FPS on supported devices. Mobile players will experience desktop-quality performance with zero lag, while the enhanced graphics engine delivers stunning visual fidelity without compromising speed. We've also squashed dozens of pesky bugs and implemented a revolutionary new rendering system that adapts to your device's capabilities in real-time.",
+      "date": "2025-03-10",
+      "image": "./images/card-Whack2.jpg"
+    }
+  ],
+  "trailDiaries": [
+    {
+      "id": 1,
+      "title": "From Rookie to Bug Slayer: My Epic Journey",
+      "excerpt": "Join me on an incredible transformation from clumsy beginner to legendary bug hunter!",
+      "fullText": "My journey began with trembling hands and missed shots, but through sheer determination and countless hours of practice, I've evolved into a bug-slaying legend! This diary chronicles my transformation from a nervous rookie who couldn't hit a stationary target to a precision master who can eliminate entire swarms with surgical accuracy. I'll share the breakthrough moments that changed everything - discovering the perfect mouse sensitivity, mastering the art of predictive aiming, and developing lightning-fast reflexes that now feel like superpowers. The satisfaction of finally achieving that elusive perfect score after months of struggle is indescribable!",
+      "date": "2025-05-12",
+      "image": "./images/card-Whack3.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Legends of the Bug Arena: Champion Interviews",
+      "excerpt": "Exclusive interviews with the world's most feared bug hunters!",
+      "fullText": "We've tracked down the most legendary bug hunters in the world for exclusive interviews that will blow your mind! These champions share their closely guarded secrets, revolutionary strategies, and the psychological tricks that separate the masters from the amateurs. From the mysterious 'ShadowStriker' who never misses a shot to the explosive 'BugBomber' who specializes in chain reactions, each champion brings a unique philosophy to the art of bug elimination. Discover how these legends approach the game, their training routines, and the mindset that keeps them at the top of the leaderboards month after month.",
+      "date": "2025-03-08",
+      "image": "./images/card-Whack4.jpg"
+    }
+  ]
+}

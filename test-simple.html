@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Test</title>
+    <link rel="stylesheet" href="./css/bug-main.css" />
+    <link rel="stylesheet" href="./css/bug-header.css" />
+  </head>
+  <body>
+    <div id="header-container"></div>
+
+    <main style="padding-top: 100px; min-height: 100vh">
+      <h1>Simple Test</h1>
+      <p>
+        If you see this page without errors, everything is working correctly.
+      </p>
+    </main>
+
+    <script src="./js/bug-utils.js"></script>
+    <script src="./js/bug-header.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof initHeader === "function") {
+          initHeader();
+          console.log("Header initialized successfully");
+        } else {
+          console.error("initHeader function not found");
+        }
+      });
+    </script>
+  </body>
+</html>

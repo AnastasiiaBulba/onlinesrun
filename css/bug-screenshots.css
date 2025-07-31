@@ -1,0 +1,212 @@
+/* Screenshots Section Styles */
+
+.screenshots-section {
+  padding: var(--spacing-xxl) 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 157, 0.1) 0%,
+    rgba(55, 66, 250, 0.1) 100%
+  );
+}
+
+.screenshots-section h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  color: var(--text-primary);
+  font-size: clamp(2rem, 4vw, 3rem);
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.screenshots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.screenshot-item {
+  position: relative;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition-normal);
+  cursor: pointer;
+  background: var(--surface-color);
+  transform: translateY(0);
+}
+
+.screenshot-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.screenshot-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: var(--transition-normal);
+}
+
+.screenshot-item:hover img {
+  transform: scale(1.1);
+}
+
+.screenshot-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: var(--text-primary);
+  padding: var(--spacing-lg);
+  transform: translateY(100%);
+  transition: var(--transition-normal);
+}
+
+.screenshot-item:hover .screenshot-overlay {
+  transform: translateY(0);
+}
+
+.screenshot-overlay h3 {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+.screenshot-overlay p {
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+/* Animation for screenshots */
+.screenshot-item {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.screenshot-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.screenshot-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.screenshot-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.screenshot-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .screenshots-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .screenshot-item img {
+    height: 180px;
+  }
+
+  .screenshot-overlay {
+    padding: var(--spacing-md);
+  }
+
+  .screenshot-overlay h3 {
+    font-size: 1.1rem;
+  }
+
+  .screenshot-overlay p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .screenshots-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+
+  .screenshot-item img {
+    height: 160px;
+  }
+
+  .screenshot-overlay {
+    padding: var(--spacing-sm);
+  }
+}
+
+/* Loading state for images */
+.screenshot-item img {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.screenshot-item img.loaded {
+  opacity: 1;
+}
+
+/* Focus states for accessibility */
+.screenshot-item:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.screenshot-item:focus .screenshot-overlay {
+  transform: translateY(0);
+}
+
+/* Keyboard navigation */
+.screenshot-item[tabindex]:focus {
+  transform: translateY(-5px) scale(1.01);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .screenshot-overlay {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .screenshot-overlay h3 {
+    color: var(--text-primary);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .screenshot-item,
+  .screenshot-item img,
+  .screenshot-overlay {
+    transition: none;
+  }
+
+  .screenshot-item:hover {
+    transform: none;
+  }
+
+  .screenshot-item:hover img {
+    transform: none;
+  }
+
+  .screenshot-item:hover .screenshot-overlay {
+    transform: translateY(0);
+  }
+}

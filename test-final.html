@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final Test - Mobile Menu</title>
+    <link rel="stylesheet" href="./css/bug-main.css" />
+    <link rel="stylesheet" href="./css/bug-header.css" />
+  </head>
+  <body>
+    <div id="header-container"></div>
+
+    <main style="padding-top: 100px; min-height: 200vh;">
+      <h1>Final Test - Mobile Menu</h1>
+      <p>✅ All errors should be fixed now</p>
+      <p>📱 Resize browser to mobile size to test mobile menu</p>
+      <p>🍔 Click hamburger button to open mobile menu</p>
+      <p>🚫 Scroll should be blocked when mobile menu is open</p>
+    </main>
+
+    <script src="./js/bug-utils.js"></script>
+    <script src="./js/bug-header.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof initHeader === "function") {
+          initHeader();
+          console.log("✅ Header initialized successfully");
+        } else {
+          console.error("❌ initHeader function not found");
+        }
+      });
+    </script>
+  </body>
+</html> 

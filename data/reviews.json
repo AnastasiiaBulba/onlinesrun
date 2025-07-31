@@ -1,0 +1,40 @@
+{
+  "reviews": [
+    {
+      "id": 1,
+      "name": "Sarah Johnson",
+      "rating": 5,
+      "text": "Absolutely addictive! The bug-whacking mechanics are so satisfying. I love how strategic you need to be to hit those fast-moving targets."
+    },
+    {
+      "id": 2,
+      "name": "Mike Chen",
+      "rating": 5,
+      "text": "Perfect casual game for quick breaks. The fast-paced action is so satisfying and the controls are intuitive. Highly recommend!"
+    },
+    {
+      "id": 3,
+      "name": "Emma Davis",
+      "rating": 4,
+      "text": "Great game to test your reflexes. The bug variety keeps it interesting and the gameplay is simple yet challenging. Love it!"
+    },
+    {
+      "id": 4,
+      "name": "Alex Thompson",
+      "rating": 5,
+      "text": "This game is pure fun! The whacking mechanics with different bug types is such a unique twist. Can't stop playing!"
+    },
+    {
+      "id": 5,
+      "name": "Lisa Wang",
+      "rating": 4,
+      "text": "Simple controls but deep strategy. I love trying to beat my high scores and the precision aiming is so satisfying!"
+    },
+    {
+      "id": 6,
+      "name": "David Rodriguez",
+      "rating": 5,
+      "text": "Amazing game! The quick reflexes required are challenging but rewarding. Perfect for both quick sessions and longer play."
+    }
+  ]
+}

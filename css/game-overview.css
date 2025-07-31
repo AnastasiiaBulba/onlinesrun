@@ -1,0 +1,212 @@
+.game-overview-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #2c5530 0%, #1a3d1e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.game-overview-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="bugs" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23bugs)"/></svg>');
+  opacity: 0.3;
+}
+
+.game-overview-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.game-overview-section h2 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.overview-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.overview-text h3 {
+  color: #4ade80;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.overview-text p {
+  color: #e5e7eb;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.overview-features {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.overview-features li {
+  color: #f3f4f6;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  padding: 15px 20px 15px 50px;
+  position: relative;
+  font-weight: 500;
+  background: rgba(74, 222, 128, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.overview-features li:hover {
+  background: rgba(74, 222, 128, 0.15);
+  border-color: rgba(74, 222, 128, 0.4);
+  transform: translateX(10px);
+  box-shadow: 0 8px 25px rgba(74, 222, 128, 0.2);
+}
+
+.overview-features li::before {
+  content: "🐛";
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  background: rgba(74, 222, 128, 0.2);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.overview-features li:hover::before {
+  background: rgba(74, 222, 128, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.overview-features li:nth-child(2)::before {
+  content: "🎯";
+}
+
+.overview-features li:nth-child(3)::before {
+  content: "💫";
+}
+
+.overview-features li:nth-child(4)::before {
+  content: "🏆";
+}
+
+.overview-image {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: perspective(1000px) rotateY(-5deg);
+  transition: transform 0.3s ease;
+}
+
+.overview-image:hover {
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+.overview-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.overview-image:hover img {
+  transform: scale(1.05);
+}
+
+.overview-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(74, 222, 128, 0.2),
+    rgba(34, 197, 94, 0.2)
+  );
+  z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .game-overview-section {
+    padding: 60px 0;
+  }
+
+  .game-overview-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+
+  .overview-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .overview-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .overview-text p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .overview-features li {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  .overview-image {
+    transform: none;
+  }
+
+  .overview-image:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-overview-section h2 {
+    font-size: 2rem;
+  }
+
+  .overview-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .overview-text p {
+    font-size: 0.95rem;
+  }
+
+  .overview-features li {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "features": [
+    {
+      "id": 1,
+      "icon": "🎯",
+      "title": "Precision Whacking",
+      "description": "Master the art of precise bug elimination with intuitive controls that respond to your every move."
+    },
+    {
+      "id": 2,
+      "icon": "💥",
+      "title": "Satisfying Hits",
+      "description": "Experience thrilling explosions when you successfully whack bugs with perfect timing and accuracy."
+    },
+    {
+      "id": 3,
+      "icon": "🏆",
+      "title": "Score System",
+      "description": "Compete for high scores with our dynamic scoring system that rewards quick reflexes and strategic thinking."
+    },
+    {
+      "id": 4,
+      "icon": "🐛",
+      "title": "Diverse Bug Types",
+      "description": "Face various insect species, each with unique behaviors and point values that keep the challenge fresh."
+    },
+    {
+      "id": 5,
+      "icon": "⚡",
+      "title": "Fast-Paced Action",
+      "description": "Quick reflexes and sharp eyes are your best weapons in this adrenaline-pumping bug-hunting adventure."
+    },
+    {
+      "id": 6,
+      "icon": "♾️",
+      "title": "Endless Fun",
+      "description": "Never-ending entertainment with procedurally generated levels and infinite replayability."
+    }
+  ]
+}

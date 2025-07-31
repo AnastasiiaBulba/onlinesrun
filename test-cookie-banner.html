@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookie Banner Test</title>
+    <link rel="stylesheet" href="./css/bug-main.css" />
+    <link rel="stylesheet" href="./css/bug-cookie-banner.css" />
+    <style>
+      body {
+        padding: 20px;
+        font-family: Arial, sans-serif;
+      }
+      .test-controls {
+        margin: 20px 0;
+        padding: 20px;
+        background: #f0f0f0;
+        border-radius: 8px;
+      }
+      .test-btn {
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        background: #4ade80;
+        color: white;
+      }
+      .test-btn:hover {
+        background: #22c55e;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Cookie Banner Test</h1>
+    <p>This page tests the cookie banner functionality.</p>
+
+    <div class="test-controls">
+      <h3>Test Controls:</h3>
+      <button class="test-btn" onclick="resetCookieChoice()">
+        Reset Cookie Choice
+      </button>
+      <button class="test-btn" onclick="location.reload()">Reload Page</button>
+      <button class="test-btn" onclick="checkCookieStatus()">
+        Check Cookie Status
+      </button>
+    </div>
+
+    <div id="status-display"></div>
+
+    <script src="./js/bug-cookie-banner.js"></script>
+    <script>
+      // Initialize cookie banner
+      document.addEventListener("DOMContentLoaded", function () {
+        initCookieBanner();
+        checkCookieStatus();
+      });
+
+      function checkCookieStatus() {
+        const choice = localStorage.getItem("cookieChoice");
+        const timestamp = localStorage.getItem("cookieTimestamp");
+        const statusDiv = document.getElementById("status-display");
+
+        let status = "<h3>Cookie Status:</h3>";
+        status += "<p><strong>Choice:</strong> " + (choice || "None") + "</p>";
+        if (timestamp) {
+          status +=
+            "<p><strong>Timestamp:</strong> " +
+            new Date(parseInt(timestamp)).toLocaleString() +
+            "</p>";
+        }
+        status +=
+          "<p><strong>Cookies Accepted:</strong> " +
+          areCookiesAccepted() +
+          "</p>";
+
+        statusDiv.innerHTML = status;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,226 @@
+/* How to Play Section Styles */
+.how-to-play-section {
+  padding: var(--spacing-xxl) 0;
+  background: linear-gradient(135deg, #1e3c72 0%, var(--background-color) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.how-to-play-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffd700" opacity="0.2"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.how-to-play-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.how-to-play-section h2 {
+  text-align: center;
+  color: var(--secondary-color);
+  margin-bottom: var(--spacing-xl);
+  font-size: clamp(2rem, 5vw, 3rem);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.8s ease-out;
+}
+
+.how-to-play-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+.instruction-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  backdrop-filter: blur(10px);
+  border: 2px solid transparent;
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.instruction-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--secondary-color);
+  box-shadow: var(--shadow-lg);
+}
+
+.instruction-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+  opacity: 0;
+  transition: var(--transition-normal);
+  z-index: -1;
+}
+
+.instruction-card:hover::before {
+  opacity: 0.1;
+}
+
+.instruction-number {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  border-radius: 50%;
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
+}
+
+.instruction-card:hover .instruction-number {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-lg);
+}
+
+.instruction-title {
+  color: var(--secondary-color);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  transition: var(--transition-fast);
+}
+
+.instruction-card:hover .instruction-title {
+  color: var(--primary-color);
+}
+
+.instruction-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.instruction-tip {
+  background: rgba(255, 215, 0, 0.1);
+  border-left: 4px solid var(--secondary-color);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  margin-top: var(--spacing-sm);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.instruction-tip::before {
+  content: "💡 ";
+  margin-right: var(--spacing-xs);
+}
+
+/* Staggered animation for cards */
+.instruction-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.instruction-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.instruction-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.instruction-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Responsive design */
+@media (max-width: 767px) {
+  .how-to-play-section {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .how-to-play-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .instruction-card {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .how-to-play-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .how-to-play-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Hover effects */
+.instruction-card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* Pulse animation for numbers */
+.instruction-number.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Bounce animation for cards */
+.instruction-card.bounce {
+  animation: bounce 2s infinite;
+}
+
+/* Additional animations */
+@keyframes instructionSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.instruction-card.slide-in {
+  animation: instructionSlideIn 0.6s ease-out;
+}
+
+/* Tip highlight animation */
+.instruction-tip {
+  animation: tipGlow 3s ease-in-out infinite;
+}
+
+@keyframes tipGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+  }
+}

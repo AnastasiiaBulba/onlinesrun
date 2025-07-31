@@ -1,0 +1,46 @@
+{
+  "instructions": [
+    {
+      "id": 1,
+      "number": "1",
+      "title": "Spot the Bugs",
+      "description": "Keep your eyes sharp and watch for bugs appearing on the screen. Different bugs have different point values and behaviors.",
+      "tip": "Focus on the screen - bugs can appear anywhere!"
+    },
+    {
+      "id": 2,
+      "number": "2",
+      "title": "Click to Whack",
+      "description": "Click on bugs as quickly as possible to eliminate them. The faster you react, the more points you'll earn.",
+      "tip": "Speed is key - don't let bugs escape!"
+    },
+    {
+      "id": 3,
+      "number": "3",
+      "title": "Aim for Accuracy",
+      "description": "Precision matters! Hitting bugs directly earns more points than grazing them. Practice your aim for maximum efficiency.",
+      "tip": "Take your time to aim, but don't wait too long!"
+    },
+    {
+      "id": 4,
+      "number": "4",
+      "title": "Use Power-ups",
+      "description": "Collect special power-ups that appear during gameplay. These can help you eliminate multiple bugs at once or slow down time.",
+      "tip": "Power-ups are rare - use them wisely!"
+    },
+    {
+      "id": 5,
+      "number": "5",
+      "title": "Score Points",
+      "description": "Each bug eliminated earns you points. Different bugs have different values, so prioritize the high-scoring ones.",
+      "tip": "Watch for golden bugs - they're worth extra points!"
+    },
+    {
+      "id": 6,
+      "number": "6",
+      "title": "Beat Your High Score",
+      "description": "The game continues until time runs out or you miss too many bugs. Challenge yourself to beat your previous best score!",
+      "tip": "Practice regularly to improve your reflexes!"
+    }
+  ]
+}

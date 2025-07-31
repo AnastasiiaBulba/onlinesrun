@@ -1,0 +1,153 @@
+/* Game Section Styles */
+.game-section {
+  padding: var(--spacing-xxl) 0;
+  background: linear-gradient(
+    135deg,
+    var(--surface-color) 0%,
+    var(--background-color) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.game-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="candy" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="%23ff6b9d" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23candy)"/></svg>');
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.game-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.game-section h2 {
+  text-align: center;
+  color: var(--secondary-color);
+  margin-bottom: var(--spacing-xl);
+  font-size: clamp(2rem, 5vw, 3rem);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.8s ease-out;
+}
+
+.game-frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--primary-color);
+  animation: slideInUp 1s ease-out 0.3s both;
+}
+
+.game-frame iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 600px;
+  border: none;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
+}
+
+.game-frame iframe:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Loading state */
+.game-frame.loading {
+  position: relative;
+  min-height: 400px;
+}
+
+.game-frame.loading::after {
+  content: "Loading game...";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Responsive design */
+@media (max-width: 767px) {
+  .game-section {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .game-frame {
+    margin: 0;
+    padding: var(--spacing-sm);
+    max-width: 100%;
+  }
+
+  .game-frame iframe {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-frame iframe {
+    height: 450px;
+    aspect-ratio: 3/4;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .game-frame iframe {
+    height: 500px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .game-frame iframe {
+    height: 600px;
+  }
+}
+
+/* Animation for game section */
+.game-section.fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+.game-frame.fade-in {
+  animation: slideInUp 1.2s ease-out 0.5s both;
+}
+
+/* Hover effects */
+.game-frame:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Loading animation */
+@keyframes loadingPulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.game-frame.loading::after {
+  animation: loadingPulse 1.5s infinite;
+}
