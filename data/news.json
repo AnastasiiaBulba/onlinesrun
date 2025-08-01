@@ -19,7 +19,7 @@
   ],
   "trailDiaries": [
     {
-      "id": 1,
+      "id": 3,
       "title": "From Rookie to Bug Slayer: My Epic Journey",
       "excerpt": "Join me on an incredible transformation from clumsy beginner to legendary bug hunter!",
       "fullText": "My journey began with trembling hands and missed shots, but through sheer determination and countless hours of practice, I've evolved into a bug-slaying legend! This diary chronicles my transformation from a nervous rookie who couldn't hit a stationary target to a precision master who can eliminate entire swarms with surgical accuracy. I'll share the breakthrough moments that changed everything - discovering the perfect mouse sensitivity, mastering the art of predictive aiming, and developing lightning-fast reflexes that now feel like superpowers. The satisfaction of finally achieving that elusive perfect score after months of struggle is indescribable!",
@@ -27,7 +27,7 @@
       "image": "./images/card-Whack3.jpg"
     },
     {
-      "id": 2,
+      "id": 4,
       "title": "Legends of the Bug Arena: Champion Interviews",
       "excerpt": "Exclusive interviews with the world's most feared bug hunters!",
       "fullText": "We've tracked down the most legendary bug hunters in the world for exclusive interviews that will blow your mind! These champions share their closely guarded secrets, revolutionary strategies, and the psychological tricks that separate the masters from the amateurs. From the mysterious 'ShadowStriker' who never misses a shot to the explosive 'BugBomber' who specializes in chain reactions, each champion brings a unique philosophy to the art of bug elimination. Discover how these legends approach the game, their training routines, and the mindset that keeps them at the top of the leaderboards month after month.",

@@ -45,17 +45,26 @@ async function loadNewsData() {
     const newsContainer = document.getElementById("news-container");
     if (!newsContainer) return;
 
-    // Combine game updates and trail diaries
-    const allNews = [...data.gameUpdates, ...data.trailDiaries];
+    // Clear container
+    newsContainer.innerHTML = "";
 
-    // Sort by date (newest first)
-    allNews.sort((a, b) => new Date(b.date) - new Date(a.date));
+    // Create Game Updates section
+    if (data.gameUpdates && data.gameUpdates.length > 0) {
+      const gameUpdatesSection = createNewsSection(
+        "Game Updates",
+        data.gameUpdates
+      );
+      newsContainer.appendChild(gameUpdatesSection);
+    }
 
-    // Create news items
-    allNews.forEach((news, index) => {
-      const newsItem = createNewsItem(news, index);
-      newsContainer.appendChild(newsItem);
-    });
+    // Create Trail Diaries section
+    if (data.trailDiaries && data.trailDiaries.length > 0) {
+      const trailDiariesSection = createNewsSection(
+        "Trail Diaries",
+        data.trailDiaries
+      );
+      newsContainer.appendChild(trailDiariesSection);
+    }
 
     // Add hover effects to news items
     const newsItems = document.querySelectorAll(".news-item");
@@ -75,6 +84,34 @@ async function loadNewsData() {
   } catch (error) {
     console.error("Error loading news data:", error);
   }
+}
+
+// Create news section with title
+function createNewsSection(title, newsArray) {
+  const section = document.createElement("div");
+  section.className = "news-section";
+
+  // Create section title
+  const sectionTitle = document.createElement("h2");
+  sectionTitle.className = "news-section-title";
+  sectionTitle.textContent = title;
+  section.appendChild(sectionTitle);
+
+  // Create news grid for this section
+  const newsGrid = document.createElement("div");
+  newsGrid.className = "news-grid";
+
+  // Sort by date (newest first)
+  newsArray.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  // Create news items
+  newsArray.forEach((news, index) => {
+    const newsItem = createNewsItem(news, index);
+    newsGrid.appendChild(newsItem);
+  });
+
+  section.appendChild(newsGrid);
+  return section;
 }
 
 // Create news item HTML
@@ -109,7 +146,7 @@ function createNewsItem(news, index) {
 }
 
 // Toggle read more functionality
-function toggleReadMore(id) {
+window.toggleReadMore = function (id) {
   const newsItem = document.querySelector(`[data-id="${id}"]`);
   if (!newsItem) return;
 
@@ -130,4 +167,4 @@ function toggleReadMore(id) {
     button.textContent = "Read less";
     button.classList.add("expanded");
   }
-}
+};
